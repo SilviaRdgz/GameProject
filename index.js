@@ -3,7 +3,7 @@ const stone = document.getElementById('stone');
 const cloud = document.getElementById('cloud');
 const bird = document.getElementById('bird');
 const score = document.getElementById('score');
-
+const startBtn = document.getElementById('start-button')
 
 
 
@@ -11,7 +11,7 @@ function jump(){
     skater.classList.add('jump-animation');
     setTimeout(() => {
         skater.classList.remove('jump-animation')
-},500);
+},1000);
 }
 
 document.addEventListener('keydown',(e) => {
@@ -44,27 +44,25 @@ document.addEventListener('keyup', (e) => {
 })
 
 // COLLISION: STONE
-// function stoneCollision(skaterTop, skaterRight, skaterLeft, skaterBottom, stoneLeft, stoneRight, stoneTop) {
-//     collidedHorizontal = skaterRight > stoneLeft && skaterLeft > stoneRight;
-//     collidedVertical = skaterBottom > stoneTop ;
 
-//     return collidedHorizontal && collidedVertical  
-// }
+
+
+function stoneCollision(skaterTop, skaterRight, skaterLeft, skaterBottom, stoneLeft, stoneRight, stoneTop) {
+    collidedHorizontal = skaterRight > stoneLeft && skaterLeft < stoneRight;
+    collidedVertical = skaterBottom > stoneTop ;
+
+    return collidedHorizontal && collidedVertical  
+    
+}
 
 // COLLISION: BIRD OR CLOUD
 
-function birdCloudCollision(skaterRight, birdLeft) {
+function skyCollision(skaterTop, skaterRight, skaterLeft, obstacleLeft, obstacleRight, obstacleBottom) {
+    collidedHorizontal = skaterRight > obstacleLeft && skaterLeft < obstacleRight;
+    collidedVertical = skaterTop < obstacleBottom ;
+
+    return collidedHorizontal && collidedVertical  
     
-    // collidedHorizontal = (skaterRight > birdLeft || skaterLeft > birdRight) || (skaterRight > cloudLeft || skaterLeft > cloudRight)
-    // collidedVertical = (skaterTop < birdBottom) || (skaterTop < cloudBottom)
-
-    console.log (skaterRight, birdLeft)
-
-    let collidedHorizontal = skaterRight > birdLeft;
- console.log (collidedHorizontal)
-
-    return collidedHorizontal;
-
 }
 
 
@@ -78,58 +76,81 @@ setInterval(() => { //STONE
     const skaterLeft = parseInt(window.getComputedStyle(skater).getPropertyValue('left'));
     const skaterRight =  skaterLeft + parseInt(window.getComputedStyle(skater).getPropertyValue('width'));
 
+
     const stoneLeft = parseInt(window.getComputedStyle(stone).getPropertyValue('left'));
     const stoneRight = stoneLeft + parseInt(window.getComputedStyle(stone).getPropertyValue('width'));
     const stoneTop = parseInt(window.getComputedStyle(stone).getPropertyValue('top'));
 
+    const cloudLeft = parseInt(window.getComputedStyle(cloud).getPropertyValue('left'));
+    const cloudRight = cloudLeft + parseInt(window.getComputedStyle(cloud).getPropertyValue('width'));
+    const cloudBottom = parseInt(window.getComputedStyle(cloud).getPropertyValue('bottom'));
 
-    if (stoneLeft < 0) {stone.style.display = 'none';
-    } else {stone.style.display = ''}
+    const birdLeft = parseInt(window.getComputedStyle(bird).getPropertyValue('left'));
+    const birdRight = birdLeft + parseInt(window.getComputedStyle(bird).getPropertyValue('width'));
+    const birdBottom = parseInt(window.getComputedStyle(bird).getPropertyValue('bottom'));
 
+    const stoneCollided = stoneCollision(skaterTop, skaterRight, skaterLeft, skaterBottom, stoneLeft, stoneRight, stoneTop);
+    const cloudCollided = skyCollision(skaterTop, skaterRight, skaterLeft, cloudLeft, cloudRight, cloudBottom);
+    const birdCollided = skyCollision(skaterTop, skaterRight, skaterLeft, birdLeft, birdRight, birdBottom)
+    
+    const anyCollided = stoneCollided || cloudCollided || birdCollided;
 
-    // if (stoneCollision(skaterTop, skaterRight, skaterLeft, skaterBottom, stoneLeft, stoneRight, stoneTop)) {
-        
+    if (anyCollided) alert(`Your score is ${score.innerText} but party is over!`)
 
-    //     // alert('Game Over ' + '\n\nplay again?');
-    // }
+    // devtext.innerText = "skaterTop:"+skaterTop+ 
+    // "\nskaterBottom:"+skaterBottom+
+    // "\nskaterLeft:"+skaterLeft+
+    // "\nskaterRight:"+skaterRight+
+    // "\nstoneLeft:"+stoneLeft+
+    // "\nstoneRight:"+stoneRight+
+    // "\nstoneTop:"+stoneTop+
+    
+    // "\nbirdLeft:"+birdLeft+
+    // "\nbirdRight:"+birdRight+
+    // "\nbirdBottom:"+birdBottom+
+
+    // "\ncloudLeft:"+cloudLeft+
+    // "\ncloudRight:"+cloudRight+
+    // "\ncloudBottom:"+cloudBottom+
+    // "\ncollided:"+anyCollided
 
     
+    if (stoneLeft < 0) {
+        stone.style.display = 'none'
+    }
+
+    if (stoneLeft < skaterLeft) {
+        cloud.style.display = '' 
+    }
+
+    if (cloudLeft <0){
+        cloud.style.display = 'none'
+    }
+    if (cloudLeft < skaterLeft) {
+        bird.style.display = '' 
+    }
+
+    if (birdLeft < 0 ) {
+    bird.style.display = 'none'
+    }
+
+    if (birdLeft < skaterLeft ) {
+        stone.style.display = '' 
+        }
+
+
+
+
 
 }, 50);
 
+cloud.style.display = 'none'
+bird.style.display = 'none'
+stone.style.display = 'none'
 
-setInterval(() => { // CLOUD
-    const skaterRight = skater.getBoundingClientRect().right;
-    const cloudLeft = cloud.getBoundingClientRect().left;
+.onclick
 
 
-    if (cloudLeft < 0) {cloud.style.display = 'none';
-    } else {cloud.style.display = ''} 
-
-   if (skaterRight === 400 && Math.floor(cloudLeft) === 548 && checkKey) {
-    console.log("game over")
-   }
-   
-   document.onkeydown = checkKey;
-
-   function checkKey(e) {
-   
-       e = e || window.event;
-       
-       if (e.code == 'ArrowDown') {
-           return true;
-        
-           // down arrow
-       } else {return false};
-   }
-   
-   
-   
-//    (birdCloudCollision(skaterRight, cloudLeft)) 
-
-    
-
-}, 2000);
 
 
 // set interval for cloud/bird collision

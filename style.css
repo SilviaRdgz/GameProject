@@ -7,56 +7,25 @@ padding: 0px;
 
 body {
     
-    background-image: url(/images/80s\ background.jpg);
+background-image: url(/images/80s\ background.jpg);
 
 }
 
-#container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: space-around;
-
-}
 
 
 #game-board {
 width: 1000;
 height: 600px;
-/* border: 2px solid black; */
 margin: 0px 0px 0px 0px;
 position: relative;
-
 background-image: url(/images/8\ bit\ beach.JPG);
 background-size: 1400px 500px;
-
-/* background: cover; */
 background-repeat: no-repeat;
-/* animation: sunset 1s infinite ; */
+margin-left: 20px;
+
 
 }
 
-
-
-/* #sunsetBg {
-    width: 1600px;
-    height: 600px;
-    margin: auto;
-    background-image: url(/images/8\ bit\ beach.JPG);
-    background: cover;
-    background-repeat: no-repeat; 
-}*/
-    
-   
-
-
-
-@keyframes sunset {
-    0% {left: 1365px;}
-    
-    100%{left: -235px;}
-    
-}
 
 
 #skater {
@@ -67,9 +36,7 @@ background-repeat: no-repeat;
     position: absolute;
     top: 250px;
     left: 200px;
-    background: cover;
-    border: 3px solid yellowgreen;
-    
+    background: cover;    
 
 }
 
@@ -101,8 +68,6 @@ animation: jump 1s linear ;
 .obstacles {
     height: inherit;
     position: absolute;
-    border: 3px solid purple;
-    
 
 }
 
@@ -116,8 +81,7 @@ animation: jump 1s linear ;
     top: 380px; 
     left: 1365px;
     background: cover;
-    /* animation: stone 4s ease-in infinite; */
-    border: 2px solid red;
+    animation: stone 3s ease-in infinite;
 }
 
 @keyframes stone {
@@ -135,8 +99,7 @@ animation: jump 1s linear ;
     top: 100px; 
     left: 1365px;
     background: cover;  
-    animation: cloud 4s ease-in alternate infinite;
-    border: 2px solid red;
+    animation: cloud 3s ease-in alternate infinite;
 }
 
 @keyframes cloud {
@@ -152,11 +115,10 @@ animation: jump 1s linear ;
     background-image: url(/images/rsz_bird.png);
     background-repeat: no-repeat;
     position: absolute;
-    top: 150px; 
+    top: 200px; 
     left: 1365px;
     background: cover;  
-    /* animation: bird 4s ease-in infinite; */
-    border: 2px solid red;
+    animation: bird 3s ease-in infinite;
 }
 
 @keyframes bird {
@@ -167,20 +129,10 @@ animation: jump 1s linear ;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-.score{
+#score {
 width: 30%;
 margin: 50px 0px 0px 100px;
+float: right;
 
 
 }
@@ -190,54 +142,52 @@ h1{
     font-size: 2em;
     color: black;
     font-family: 'Press Start 2P', cursive;
-    
 
 }
 
-.Life-Bar {
-    width: 35%;
-    margin: 0;
-    padding: 10px 0px 10px 0px;
-    border: 1px solid orange;
-    background-color: orange;
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    float: right;
-}
 
-
-/* .container {
-    width: 1600px;
-    margin: 0px 270px 0px 270px;
-    display: flex;
-    flex-direction: column;
-
-
-} */
 
 .sub-container{
     display: flex;
     flex-direction: row;
 }
 
-.game-info p {
-    width: 50%;
-    font-size: 1.5em;
-    font-family: 'Press Start 2P', cursive;
-    color: grey;
+.game-info{
+    width: 55%;
     border: 2px solid #E8CF00;
     background-color: #FFE400;
+    margin-bottom: 40px;
+}
+
+
+.game-info p {
+    font-size: 1.5em;
+    font-family: 'Press Start 2P', cursive;
+    text-align: left;
+    color: rgb(75, 72, 72);
+    line-height: 40px;
+    text-indent: 30px;
+    
     margin: 0px 10px 0px 50px;
-    padding: 0px 0px 20px 0px;
+    padding: 10px 10px 10px 0px;
 
 }
 
+#start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 200px;
+
+
+}
+
+
 .start-button{
     width: 50%;
-    margin-bottom: 300px;
-    margin-left: 400px;
     padding: 20px 20px 20px 20px;
+    margin-bottom: 60px;
     font-family: 'Press Start 2P', cursive;
     font-size: 2em;
     font-weight: bold;
@@ -253,5 +203,34 @@ h1{
 button:hover{
     background: linear-gradient(90deg,#03a9f4, #f441a5, #ffeb3b, #03a94f);
     cursor: pointer;
+
+}
+
+
+
+
+
+ul{
+    width: 25%;
+    list-style: none;
+    border: 2px solid #E8CF00;
+    background-color: #FFE400;
+    padding: 20px 10px 20px 12px;
+   
+} 
+h2 {
+    font-family: 'Press Start 2P', cursive;
+    text-indent: 70px;
+    line-height: 40px;
+    color: rgb(75, 72, 72);
+
+
+}
+ul li {
+    font-family: 'Press Start 2P', cursive;
+    line-height: 40px;
+    text-indent: 40px;
+    color: rgb(75, 72, 72);
+
 
 }
