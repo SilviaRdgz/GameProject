@@ -86,13 +86,15 @@ animation: jump 1s linear ;
 }
 
 @keyframes jump {
-    0% {top: 300px;}
+    0% {top: 250px;}
 
-    50% {top: 75px;}
+    30% {top: 100px;}
 
-    75% {top: 75px;}
+    50% {top: 50px;}
+
+    80% {top: 100px;}
     
-    100%{top: 300px;}
+    100%{top: 250px;}
     
 }
 
@@ -114,10 +116,16 @@ animation: jump 1s linear ;
     top: 380px; 
     left: 1365px;
     background: cover;
-    animation: stone 4s infinite;
+    /* animation: stone 4s ease-in infinite; */
     border: 2px solid red;
-
 }
+
+@keyframes stone {
+    0% {left: 1365px;}
+    
+    100%{left: -1235px;}   
+}
+
 #cloud{
     width: 235px;
     height: 210px;
@@ -127,19 +135,9 @@ animation: jump 1s linear ;
     top: 100px; 
     left: 1365px;
     background: cover;  
-    animation: cloud 4s infinite;
+    animation: cloud 4s ease-in alternate infinite;
     border: 2px solid red;
 }
-
-@keyframes stone {
-    0% {left: 1365px;}
-    
-    100%{left: -1235px;}
-    
-}
-
-
-
 
 @keyframes cloud {
     0% {left: 1365px;}
@@ -148,19 +146,52 @@ animation: jump 1s linear ;
     
 }
 
+#bird{
+    width: 170px;
+    height: 100px;
+    background-image: url(/images/rsz_bird.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 150px; 
+    left: 1365px;
+    background: cover;  
+    /* animation: bird 4s ease-in infinite; */
+    border: 2px solid red;
+}
+
+@keyframes bird {
+    0% {left: 1365px;}
+    
+    100%{left: -1235px;}
+    
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 .score{
 width: 30%;
-float: right; 
-margin-right: 50px;  
+margin: 50px 0px 0px 100px;
+
 
 }
 
 h1{
     text-align: center;
-    font-size: 4em;
+    font-size: 2em;
     color: black;
+    font-family: 'Press Start 2P', cursive;
+    
+
 }
 
 .Life-Bar {
@@ -211,10 +242,16 @@ h1{
     font-size: 2em;
     font-weight: bold;
     color: white;
+    border: 2px solid purple;
+    outline: none;
     background-color: pink;
-    border: 2px solid grey;
-     
+    border-radius: 4px;
+
 
 }
 
+button:hover{
+    background: linear-gradient(90deg,#03a9f4, #f441a5, #ffeb3b, #03a94f);
+    cursor: pointer;
 
+}
