@@ -7,7 +7,7 @@ padding: 0px;
 
 body {
     
-background-image: url(/images/80s\ background.jpg);
+background-image: url(./images/80s\ background.jpg);
 
 }
 
@@ -18,7 +18,7 @@ width: 1000;
 height: 600px;
 margin: 0px 0px 0px 0px;
 position: relative;
-background-image: url(/images/8\ bit\ beach.JPG);
+background-image: url(./images/8\ bit\ beach.JPG);
 background-size: 1400px 500px;
 background-repeat: no-repeat;
 margin-left: 20px;
@@ -31,7 +31,7 @@ margin-left: 20px;
 #skater {
     width: 200px;
     height: 210px;
-    background-image: url(/images/skaterforward.png);
+    background-image: url(./images/skaterforward.png);
     background-repeat: no-repeat;
     position: absolute;
     top: 250px;
@@ -42,7 +42,7 @@ margin-left: 20px;
 
 
 #skater.skater-duck {
-    background-image: url(/images/skater-duck.png);
+    background-image: url(./images/skater-duck.png);
     top: 300px;
 
 }
@@ -75,7 +75,7 @@ animation: jump 1s linear ;
 #stone{
     width: 135px;
     height: 110px;
-    background-image: url(/images/SM\ 8_bit_stone.png);
+    background-image: url(./images/SM\ 8_bit_stone.png);
     background-repeat: no-repeat;
     position: absolute;
     top: 380px; 
@@ -93,7 +93,7 @@ animation: jump 1s linear ;
 #cloud{
     width: 235px;
     height: 210px;
-    background-image: url(/images/rsz_18_bit_cloud.png);
+    background-image: url(./images/rsz_18_bit_cloud.png);
     background-repeat: no-repeat;
     position: absolute;
     top: 100px; 
@@ -112,7 +112,7 @@ animation: jump 1s linear ;
 #bird{
     width: 170px;
     height: 100px;
-    background-image: url(/images/rsz_bird.png);
+    background-image: url(./images/rsz_bird.png);
     background-repeat: no-repeat;
     position: absolute;
     top: 200px; 

@@ -31,7 +31,6 @@ document.addEventListener('keydown', (e) => {
     if (e.code == "ArrowDown" && !skater.classList.contains('skater-duck')) {
         duck();
     }
-    console.log (e.code)
 
 })
 
