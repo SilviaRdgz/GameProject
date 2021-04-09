@@ -5,7 +5,7 @@ const bird = document.getElementById('bird');
 const score = document.getElementById('score');
 const startBtn = document.getElementById('start-button')
 
-
+// startBtn.addEventListener('click',() => {})
 
 function jump(){
     skater.classList.add('jump-animation');
@@ -66,7 +66,8 @@ function skyCollision(skaterTop, skaterRight, skaterLeft, obstacleLeft, obstacle
 }
 
 
-setInterval(() => { //STONE
+
+setInterval(() => { 
 
     score.innerText ++;
    
@@ -95,7 +96,7 @@ setInterval(() => { //STONE
     
     const anyCollided = stoneCollided || cloudCollided || birdCollided;
 
-    if (anyCollided) alert(`Your score is ${score.innerText} but party is over!`)
+    if (anyCollided) alert(`Good job! Your score is ${score.innerText} but the party is over! T_T \n Try again?`)
 
     // devtext.innerText = "skaterTop:"+skaterTop+ 
     // "\nskaterBottom:"+skaterBottom+
@@ -139,10 +140,9 @@ setInterval(() => { //STONE
         }
 
 
-
-
-
 }, 50);
+
+
 
 cloud.style.display = 'none'
 bird.style.display = 'none'
@@ -150,14 +150,4 @@ stone.style.display = 'none'
 
 .onclick
 
-
-
-
-// set interval for cloud/bird collision
-
-//start game with button
-
-//add music
-
-//fine tune overall design
 

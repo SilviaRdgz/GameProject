@@ -7,55 +7,48 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">>
     
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/intropage.css" />
     <title>Rolling into the weekend</title>
   </head>
   <body>
-    <audio controls autoplay>
-      <source src="/audio/GameProjectBGAudio.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-    </audio>    
-
-  <div>
+     
+  <div id = "barb-intro">
 
     <div class= "game-info">
-    <p>Hey there, I’m Barb! LA’s grooviest roller girl.
+    <p>Hey there, I’m Barb! LA’s grooviest roller girl.<br>
       On Saturdays I love to skate and watch the sunsets 
       of Venice beach, but today I have little time to stick 
       around! I am heading to a party and I heard that 
       Milli Vanilli will show up! I am a bit late, so 
-      I’ll have to speed up. Would you help me get there 
+      I’ll have to speed up. <br>Would you help me get there 
       on time without breaking a leg? Watch out for the 
       skating conditions, they seems a bit rough today.
     </p>
     </div>
 
- 
-
     <div>
-
-    <div id="game-board">
-    <h1 id="score"> 0 </h1>
-    <div id="skater"></div>
-    <div class = 'obstacles'>
-    <div id="stone"></div>
-    <div id="cloud"></div>
-    <div id="bird"></div>
-    <div id="devtext"></div>
-
+      <img src = "/images/Barb.png" id = "profile-photo"/>
+    </div>
   </div>
 
-    </div>  
+  <section id = "start-game">
+    
+    <div> 
+      <a href="/game.html" >
+<button class= "start-button"><span>LET'S ROLL</span></button>
+</a>   
+</div>    
 
-    <div id= "start"> 
-      <button type="button" class="start-button">
-        <span>LET'S ROLL</span></button>
+   <div id = "commands">
+
     <ul><h2>COMMANDS:</h2>
       <li>UP Arrow = Jump</li>
       <li>DOWN Arrow = Duck</li>
     </ul>   
     </div>
 
+
+  </section>  
     <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
